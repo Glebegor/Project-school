@@ -13,9 +13,17 @@ AddCom.on('click', function(){
 
     var createNameCom = document.createElement('div');
     createNameCom.className = "comentsName";
-    createNameCom.textContent  = 'Author: ' + document.getElementById('nameCom').value;
-    createDivCom.appendChild(createNameCom);
-     /* add name for coment*/
+    var nameUser = document.getElementById('nameCom').value
+    if (nameUser.length > 50){
+        nameUser = 'NoName'
+        alert("Please write name how be not bigger when 50 letters")
+        createDivCom.removeChild()
+    } else {
+        createNameCom.textContent  = 'Author: ' + nameUser;
+        createDivCom.appendChild(createNameCom);
+        /* add name for coment*/
+    };
+        
 
     var createTextCom = document.createElement('div');
     createTextCom.className = "comentsText";
@@ -23,11 +31,18 @@ AddCom.on('click', function(){
     createDivCom.appendChild(createTextCom);
     /* add text for coment*/
 
+    var createDateCom = document.createElement('div');
+    createDateCom.className = "DateCom";
+    createDateCom.textContent  = now.getDate() + "." + (now.getMonth()+ 1) + "." + now.getFullYear();
+    /* getMonth показывает неправильное значение */
+    createDivCom.appendChild(createDateCom);
+    /* add text for coment*/
+
     var createTimeCom = document.createElement('div');
     createTimeCom.className = "timeCom";
-    createTimeCom.textContent  = now.getDate() + "." + (now.getMonth()+ 1) + "." + now.getFullYear();
-    /*getMonth показывает неправильное значение*/
-    createDivCom.appendChild(createTimeCom);
+    createTimeCom.textContent  = now.getHours() + "HR " + now.getMinutes() + "MIN";
+    /* getMonth показывает неправильное значение */
+    createDateCom.appendChild(createTimeCom);
     /* add text for coment*/
 
 });

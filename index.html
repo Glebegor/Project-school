@@ -13,7 +13,18 @@
     <title>Gleb Arseniuk</title>
 </head>
 <body>
-    <div class="settings"><img src="image/setting.png" oneclick="" alt=""></div>
+    <div id="settings" class="settings">
+        <img  onclick="settings()" src="image/setting.png" alt="">
+        <div class="settingsMenu">
+            <h1>Contacts</h1>
+            <ul>
+                <li>Email: glebegor2220@gmail.com</li>
+                <li>Number: +380 97 102 6980</li>  
+                <li>Github: <a href="https://github.com/Glebegor">Glebegor</a></li>
+            </ul>
+            <i>All rights reserved ©2021</i>
+        </div>
+    </div>
     <header>
         <div class="container">
             <div class="header">
@@ -252,6 +263,7 @@
             <button class="AddCom">Public comment</button>
         </div>
         <div id="coments" class="coments">
+            
         </div>
     </div>
 
@@ -259,5 +271,6 @@
     <script src="js/procents.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/comments.js"></script>
+    <script src="js/settings.js"></script>
 </body>
 </html> 
